@@ -10,28 +10,39 @@
   <body>
     <header>
       <h1>Todo App</h1>
+    </header>
+    <section class="all-open-done">
       <label for="all">All</label>
       <input
         type="radio"
         name="filter-option"
         value="all"
-        id="all"
+        id="all-radio"
         checked
       /><br />
 
       <label for="open">Open</label>
-      <input type="radio" name="filter-option" value="open" id="open" /><br />
+      <input
+        type="radio"
+        name="filter-option"
+        value="open"
+        id="open-radio"
+      /><br />
 
       <label for="done">Done</label>
-      <input type="radio" name="filter-option" value="done" id="done" /><br />
-      <button class="remove-btn">Remove done Todos</button>
-    </header>
+      <input
+        type="radio"
+        name="filter-option"
+        value="done"
+        id="done-radio"
+      /><br />
+      <button id="remove-btn">Remove done Todos</button>
+    </section>
+
     <section class="task-list">
-      <input type="text" name="list" class="add-text" placeholder="Whats up?" />
-      <button class="add-btn">Add</button>
-      <ul class="todo-list">
-        <li class="todo-text"></li>
-      </ul>
+      <input type="text" name="list" id="input-todo" placeholder="Whats up?" />
+      <button id="add-btn">Add</button>
+      <ul class="todo-list"></ul>
     </section>
     <script src="script.js"></script>
   </body>

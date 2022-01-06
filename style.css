@@ -17,8 +17,13 @@ header {
   line-height: 1.5;
 }
 
+.all-open-done {
+  margin: 1rem;
+  line-height: 1.5;
+}
+
 .task-list {
-  margin-top: 1rem;
+  margin: 1rem;
 }
 
 .todo-list {
