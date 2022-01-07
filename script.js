@@ -18,13 +18,11 @@ function addNewList() {
       newList.appendChild(newText);
       newText.appendChild(checkBox);
     }
+
     textInput.value = "";
-    removeBtn.addEventListener("click", () => {
-      if (checkBox.checked) {
-        newText.remove();
-        checkBox.remove();
-      }
-    });
+
+    addRemoveButtonEventListener(removeBtn, checkBox, newText);
+
     checkBox.addEventListener("change", () => {
       if (checkBox.checked) {
         newText.style.textDecoration = "line-through";
@@ -32,6 +30,20 @@ function addNewList() {
         newText.style.textDecoration = "";
       }
     });
+
+    console.log(newList);
+    console.log(checkBox);
+    console.log(checkBox.checked);
   });
 }
+
+function addRemoveButtonEventListener(removeBtn, checkBox, newText) {
+  removeBtn.addEventListener("click", () => {
+    if (checkBox.checked) {
+      newText.remove();
+      checkBox.remove();
+    }
+  });
+}
+
 addNewList();
