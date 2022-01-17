@@ -4,7 +4,7 @@ class TodoApp {
   state = {
     filter: "all",
     input_value: "",
-    todos: [{ text: "Your List", isDone: false }],
+    todos: [],
   };
 
   constructor() {
@@ -51,10 +51,10 @@ class TodoApp {
 
   handleAddTodo = () => {
     const newTodoText = this.state.input_value;
+    this.state.input_value = "";
     const newTodo = { text: newTodoText, isDone: false };
     if (newTodoText !== "" && newTodoText.length >= 5) {
       this.state.todos.push(newTodo);
-      this.state.input_value = "";
     }
     this.render();
   };
@@ -114,10 +114,8 @@ class TodoApp {
       filterdTodos = this.state.todos;
     } else if (filter === "open") {
       filterdTodos = this.state.todos.filter((todo) => todo.isDone === false);
-      console.log(filter);
     } else if (filter === "done") {
       filterdTodos = this.state.todos.filter((todo) => todo.isDone === true);
-      console.log(filter);
     }
 
     filterdTodos.forEach((todo) => {
